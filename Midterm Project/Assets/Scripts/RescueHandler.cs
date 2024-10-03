@@ -20,17 +20,20 @@ public class RescueHandler : MonoBehaviour
     {
         if (container.childCount == 0)
         {
-            GameObject newPrefab = Instantiate(prefab, container);
-            newPrefab.transform.localPosition = new Vector3(0f, 3.20523f, 2.661115f);
-
-            float randomX = Random.Range(-10f, 10f);
-            float randomZ = Random.Range(-10f, 10f);
-            container.position = new Vector3(randomX, container.position.y, randomZ);
+            generateRescue();
         }
         startY = transform.position.y;
         maxY = startY + height;
         upTime = height / moveSpeed;
         downTime = height / moveSpeed;
+    }
+
+    void Update()
+    {
+        if (container.childCount == 0)
+        {
+            generateRescue();
+        }
     }
 
     void FixedUpdate()
@@ -58,5 +61,15 @@ public class RescueHandler : MonoBehaviour
                 movingUp = true;
             }
         }
+    }
+
+    void generateRescue()
+    {
+        GameObject newPrefab = Instantiate(prefab, container);
+        newPrefab.transform.localPosition = new Vector3(0f, 3.20523f, 2.661115f);
+
+        float randomX = Random.Range(-10f, 10f);
+        float randomZ = Random.Range(-10f, 10f);
+        container.position = new Vector3(randomX, container.position.y, randomZ);
     }
 }
