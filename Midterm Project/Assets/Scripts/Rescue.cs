@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rescue : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
