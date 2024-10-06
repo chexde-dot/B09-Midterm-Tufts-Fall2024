@@ -4,72 +4,31 @@ using UnityEngine;
 
 public class RescueHandler : MonoBehaviour
 {
-    public GameObject prefab;
-    public Transform container;
-    public float moveSpeed = 2f;
-    public float height = 1f;
-
-    private float upTime;
-    private float downTime;
-    private float maxY;
-    private float startY;
-    private float timer;
-    private bool movingUp = true;
+    public GameObject victim;
+    public int maxVictimCount = 1;
+    public int boatCapacity = 10;
+    public int victimCount = 0; // the number of victim in the ocean
+    public int victimInBoat = 0;    // the number of victim in the boat
 
     void Start()
     {
-        if (container.childCount == 0)
-        {
-            generateRescue();
-        }
-        startY = transform.position.y;
-        maxY = startY + height;
-        upTime = height / moveSpeed;
-        downTime = height / moveSpeed;
+
     }
 
     void Update()
     {
-        if (container.childCount == 0)
+        if (victimCount < maxVictimCount)
         {
-            generateRescue();
+            generateVictim();
         }
     }
 
-    void FixedUpdate()
+    void generateVictim()
     {
-        timer += Time.fixedDeltaTime;
-        if (movingUp)
-        {
-            float newY = Mathf.Lerp(startY, maxY, timer / upTime);
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-            if (timer >= upTime)
-            {
-                timer = 0;
-                movingUp = false;
-            }
-        }
-        else
-        {
-            float newY = Mathf.Lerp(maxY, startY, timer / downTime);
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-            if (timer >= downTime)
-            {
-                timer = 0;
-                movingUp = true;
-            }
-        }
-    }
-
-    void generateRescue()
-    {
-        GameObject newPrefab = Instantiate(prefab, container);
-        newPrefab.transform.localPosition = new Vector3(0f, 3.20523f, 2.661115f);
-
+        GameObject newVictim = Instantiate(victim);
         float randomX = Random.Range(-10f, 10f);
         float randomZ = Random.Range(-10f, 10f);
-        container.position = new Vector3(randomX, container.position.y, randomZ);
+        newVictim.transform.localPosition = new Vector3(randomX, -0.5f, randomZ);
+        victimCount++;
     }
 }

@@ -12,8 +12,10 @@ public class GameHandler : MonoBehaviour
     public int StartPlayerHealth = 100;
     public GameObject healthText;
 
-    public static int gotTokens = 0;
-    public GameObject tokensText;
+    public static int victimInBoat = 0;
+    public GameObject victimInBoatText;
+    public static int liveSaved = 0;
+    public GameObject liveSavedText;
 
     public bool isDefending = false;
 
@@ -33,9 +35,16 @@ public class GameHandler : MonoBehaviour
         updateStatsDisplay();
     }
 
-    public void playerGetTokens(int newTokens)
+    public void playerGetVictims(int victimCount)
     {
-        gotTokens += newTokens;
+        victimInBoat += victimCount;
+        updateStatsDisplay();
+    }
+
+    public void playerGetScore(int score)
+    {
+        victimInBoat -= score;
+        liveSaved += score;
         updateStatsDisplay();
     }
 
@@ -73,8 +82,11 @@ public class GameHandler : MonoBehaviour
         Text healthTextTemp = healthText.GetComponent<Text>();
         healthTextTemp.text = "HEALTH: " + playerHealth;
 
-        Text tokensTextTemp = tokensText.GetComponent<Text>();
-        tokensTextTemp.text = "GOLD: " + gotTokens;
+        Text VIBTextTemp = victimInBoatText.GetComponent<Text>();
+        VIBTextTemp.text = "Victim In Boat: " + victimInBoat;
+
+        Text SavedTextTemp = liveSavedText.GetComponent<Text>();
+        SavedTextTemp.text = "SAVED: " + liveSaved;
     }
 
     public void playerDies()
