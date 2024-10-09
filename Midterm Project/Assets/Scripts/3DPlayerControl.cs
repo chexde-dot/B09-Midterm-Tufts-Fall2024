@@ -5,6 +5,7 @@ public class BoatController : MonoBehaviour
     public float thrust = 10f; // Acceleration force
     public float drag = 0.5f; // Drag force to slow down the boat
     public float maxSpeed = 20f; // Maximum speed
+    public float turnSpeed = 1f;
     public Camera playerCamera; // Reference to the camera
 
     private Rigidbody rb;
@@ -22,7 +23,7 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Get input for direction
         float moveInput = Input.GetAxis("Vertical"); // Forward/backward input (W/S or Up/Down arrows)
@@ -51,7 +52,7 @@ public class BoatController : MonoBehaviour
         // Handle turning
         if (turnInput != 0)
         {
-            transform.Rotate(0, turnInput * 0.5f, 0); // Adjust the multiplier for sensitivity
+            transform.Rotate(0, turnInput * turnSpeed, 0); // Adjust the multiplier for sensitivity
         }
 
         // Apply drag based on current velocity direction
