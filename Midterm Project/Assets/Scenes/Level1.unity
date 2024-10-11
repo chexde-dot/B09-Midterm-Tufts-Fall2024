@@ -538,7 +538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 786239914558670414, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.03
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 786239914558670414, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2554986968806767923, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00d90a6137a4e46e4be019880a852fcb, type: 2}
     - target: {fileID: 5644440280552920271, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
       propertyPath: m_IsTrigger
       value: 0
