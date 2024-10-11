@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8656851982874644822, guid: 03422d2c0979d4e81a7e6613ef28e403, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -529,6 +529,26 @@ PrefabInstance:
     - target: {fileID: 347673427408967820, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
       propertyPath: m_Name
       value: 'Pause_Button '
+      objectReference: {fileID: 0}
+    - target: {fileID: 347673427408967820, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699049358852542506, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1253.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 699049358852542506, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -700.2587
+      objectReference: {fileID: 0}
+    - target: {fileID: 699049358852542506, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 626
+      objectReference: {fileID: 0}
+    - target: {fileID: 699049358852542506, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 350.1294
       objectReference: {fileID: 0}
     - target: {fileID: 5679759547888509074, guid: f65e5c16af4e74664931fcdf078a15b0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
