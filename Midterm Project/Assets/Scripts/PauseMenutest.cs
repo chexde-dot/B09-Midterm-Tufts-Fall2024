@@ -17,6 +17,7 @@ public class PauseMenutest : MonoBehaviour
     {
         Pause_Menu.SetActive(true);
         Time.timeScale = 0;
+        Debug.Log(Time.timeScale);
     }
    
     public void Continue()
