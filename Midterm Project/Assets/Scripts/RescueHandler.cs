@@ -9,6 +9,9 @@ public class RescueHandler : MonoBehaviour
     public int boatCapacity = 10;
     public int victimCount = 0; // the number of victim in the ocean
     public int victimInBoat = 0;    // the number of victim in the boat
+    public List<Vector3> positions = new List<Vector3>();
+
+    private int spawnNumber = 0;
 
     void Start()
     {
@@ -17,7 +20,7 @@ public class RescueHandler : MonoBehaviour
 
     void Update()
     {
-        if (victimCount < maxVictimCount)
+        if (spawnNumber < positions.Count)
         {
             generateVictim();
         }
@@ -26,9 +29,10 @@ public class RescueHandler : MonoBehaviour
     void generateVictim()
     {
         GameObject newVictim = Instantiate(victim);
-        float randomX = Random.Range(-10f, 10f);
-        float randomZ = Random.Range(-10f, 10f);
+        float randomX = positions[spawnNumber].x;
+        float randomZ = positions[spawnNumber].z;
         newVictim.transform.localPosition = new Vector3(randomX, -0.5f, randomZ);
         victimCount++;
+        spawnNumber++;
     }
 }
