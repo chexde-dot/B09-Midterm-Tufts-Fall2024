@@ -241,7 +241,7 @@ MonoBehaviour:
   maxOffsetMultiplier: 2
   offsetRate: 100
   enableMouseControl: 1
-  rotationSpeed: 10
+  rotationSpeed: 5
   projectilePrefab: {fileID: 3546501257591567428, guid: 8057a986e2e9a4a9d918be0b544cb605, type: 3}
   firePos: {fileID: 5137787351871657165}
   LaunchForce: 150
