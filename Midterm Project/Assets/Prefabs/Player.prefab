@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 00d90a6137a4e46e4be019880a852fcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,6 +83,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2578334890286704002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5137787351871657165}
+  m_Layer: 0
+  m_Name: Fire Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5137787351871657165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578334890286704002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 786239914558670414}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6467519116938662768
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +126,7 @@ GameObject:
   - component: {fileID: 8009337493735176968}
   - component: {fileID: 7454090798654251200}
   - component: {fileID: 3901106095971519764}
+  - component: {fileID: 8415543995780193091}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -109,8 +141,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6467519116938662768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6225433, y: 1.7489777, z: 6.283339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6467519116938662768}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 905ebb1b7b4bb4589ab4c2b3560a9ad9, type: 3}
   m_Name: 
@@ -191,8 +223,28 @@ MonoBehaviour:
   playerObj: {fileID: 786239914558670414}
   speed: 0.01
   offsetCam: {x: 0, y: 11, z: -25}
-  offsetPositionSpace: 1
-  lookAt: 1
+--- !u!114 &8415543995780193091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467519116938662768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d18534a29ed94ed99ed39781aab208a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 786239914558670414}
+  baseSpeed: 0.01
+  baseOffset: {x: 0, y: 5, z: -15}
+  maxOffsetMultiplier: 2
+  offsetRate: 100
+  enableMouseControl: 1
+  rotationSpeed: 10
+  projectilePrefab: {fileID: 3546501257591567428, guid: 8057a986e2e9a4a9d918be0b544cb605, type: 3}
+  firePos: {fileID: 5137787351871657165}
+  LaunchForce: 150
 --- !u!1 &6749465460842503993
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4827297202167069016}
+  - {fileID: 5137787351871657165}
   - {fileID: 3760296663698607493}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -275,8 +328,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 2.5, z: 9.643406}
-  m_Center: {x: 0, y: 0, z: -0.17829704}
+  m_Size: {x: 3, y: 2.4153528, z: 9.643406}
+  m_Center: {x: 0, y: 0.04232353, z: -0.17829704}
 --- !u!114 &1750081696425215119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,8 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245e80bacd2a04f109679efc49504a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 25
+  thrust: 50
   drag: 5
-  maxSpeed: 25
-  turnSpeed: 1
-  playerCamera: {fileID: 8009337493735176968}
+  maxSpeed: 50
+  turnSpeed: 1.5

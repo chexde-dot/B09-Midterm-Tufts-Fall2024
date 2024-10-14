@@ -77,6 +77,28 @@ public class GameHandler : MonoBehaviour
         }
     }
 
+    //ROBERTO ADD//
+    public void IncreaseLiveSaved(int amount)
+    {
+        // Ensure the amount is positive
+        if (amount > 0)
+        {
+            liveSaved += amount; // Increase live saved
+            updateStatsDisplay(); // Update the display
+        }
+    }
+
+    public void DecreaseVictimInBoat(int amount)
+    {
+        // Ensure the amount is positive
+        if (amount > 0)
+        {
+            victimInBoat -= amount;
+            updateStatsDisplay(); // Update the display
+        }
+    }
+    //END OF ROBERTO ADD//
+
     public void updateStatsDisplay()
     {
         Text healthTextTemp = healthText.GetComponent<Text>();

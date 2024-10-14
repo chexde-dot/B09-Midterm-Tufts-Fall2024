@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028373, g: 0.22571398, b: 0.30692294, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,17 +584,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 00d90a6137a4e46e4be019880a852fcb, type: 2}
+    - target: {fileID: 4827297202167069016, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5644440280552920271, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_Size.z
+      value: 11.5917015
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644440280552920271, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
+      propertyPath: m_Center.z
+      value: -1.1524448
       objectReference: {fileID: 0}
     - target: {fileID: 6749465460842503993, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406219147747159996, guid: b98b0b6288ed0455f9a7109decadc0e7, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1306,6 +1310,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 500, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &548855695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1911652084645142265, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
+  m_PrefabInstance: {fileID: 1942565696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &548855699
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548855695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0108504575, y: 0.010022046, z: 1.5877618}
+  m_Center: {x: 0.0004682236, y: -0.0003474949, z: 0.78386736}
 --- !u!4 &568373854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1023575148232657951, guid: 570a4ef3e231b41839ff52b3467523bb, type: 3}
@@ -5270,6 +5300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.464
       objectReference: {fileID: 0}
+    - target: {fileID: 1911652084645142265, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
+      propertyPath: m_TagString
+      value: Dock
+      objectReference: {fileID: 0}
     - target: {fileID: 2011746799954501648, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.114786
@@ -5574,6 +5608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dock1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8492430319939481216, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
+      propertyPath: m_TagString
+      value: Dock
+      objectReference: {fileID: 0}
     - target: {fileID: 8638466297751277555, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5638,6 +5676,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8492430319939481216, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1196365194}
+    - targetCorrespondingSourceObject: {fileID: 1911652084645142265, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 548855699}
   m_SourcePrefab: {fileID: 100100000, guid: 033d7ba6507ab4a80a491d81e61bd7e6, type: 3}
 --- !u!1001 &1964776592
 PrefabInstance:

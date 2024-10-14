@@ -5,17 +5,10 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
-    [SerializeField]
     public Transform playerObj;
     public float speed = 0.01f;
-
-    [SerializeField]
     public Vector3 offsetCam;
-
-    [SerializeField]
     private Space offsetPositionSpace = Space.Self;
-
-    [SerializeField]
     private bool lookAt = true;
 
     void Start()
@@ -33,7 +26,7 @@ public class CameraFollow : MonoBehaviour
 
     public void MoveAndRotateCamera()
     {
-        Vector3 offsetCameraSide = new Vector3(offsetCam.x + 1, offsetCam.y, offsetCam.z);
+        Vector3 offsetCameraSide = new Vector3(offsetCam.x, offsetCam.y, offsetCam.z);
         //if (playerObj == null) { Debug.LogWarning("Missing playerObj ref !", this); return; }
 
         // compute position
