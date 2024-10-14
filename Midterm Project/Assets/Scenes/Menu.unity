@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028373, g: 0.22571398, b: 0.30692294, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -411,6 +411,11 @@ PrefabInstance:
     - target: {fileID: 782066575662875491, guid: 03422d2c0979d4e81a7e6613ef28e403, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886724895193736366, guid: 03422d2c0979d4e81a7e6613ef28e403, type: 3}
+      propertyPath: m_text
+      value: "CONTROLS \nW: Move Forward\nS: Move Backward\nA: Steer Left\nD: Steer
+        Right\nRight-Click: Aim\nLeft-Click: Shoot "
       objectReference: {fileID: 0}
     - target: {fileID: 5671507496804140727, guid: 03422d2c0979d4e81a7e6613ef28e403, type: 3}
       propertyPath: m_Pivot.x
