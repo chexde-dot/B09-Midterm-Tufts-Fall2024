@@ -16,6 +16,7 @@ public class GameHandler : MonoBehaviour
     public GameObject victimInBoatText;
     public static int liveSaved = 0;
     public GameObject liveSavedText;
+    public float timeAdd = 10f;
 
     public bool isDefending = false;
 
@@ -24,6 +25,7 @@ public class GameHandler : MonoBehaviour
 
     private string sceneName;
     public static string lastLevelDied;  //allows replaying the Level where you died
+    private Timer timer;
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class GameHandler : MonoBehaviour
         playerHealth = StartPlayerHealth;
         //}
         updateStatsDisplay();
+        timer = GameObject.FindWithTag("Timer").GetComponent<Timer>();
     }
 
     public void playerGetVictims(int victimCount)
@@ -84,6 +87,7 @@ public class GameHandler : MonoBehaviour
         if (amount > 0)
         {
             liveSaved += amount; // Increase live saved
+            timer.AddTime(timeAdd * amount);
             updateStatsDisplay(); // Update the display
         }
     }

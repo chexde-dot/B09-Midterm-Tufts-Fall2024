@@ -6,6 +6,7 @@ public class Rescue : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float height = 1f;
+    public float respawnTime = 10f;
 
     private float upTime;
     private float downTime;
@@ -15,6 +16,9 @@ public class Rescue : MonoBehaviour
     private bool movingUp = true;
     private GameObject rescueHandler;
     private GameObject gameHandler;
+    private GameObject rescueChild;
+    private MeshRenderer rescueMeshRenderer;
+    private BoxCollider boxCollider;
 
     private void Start() {
         rescueHandler = GameObject.FindWithTag("RescueHandler");
@@ -23,6 +27,13 @@ public class Rescue : MonoBehaviour
         maxY = startY + height;
         upTime = height / moveSpeed;
         downTime = height / moveSpeed;
+
+        rescueChild = transform.Find("rescue1").gameObject;
+        if (rescueChild != null)
+        {
+            rescueMeshRenderer = rescueChild.GetComponent<MeshRenderer>();
+        }
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     void FixedUpdate()
@@ -71,6 +82,19 @@ public class Rescue : MonoBehaviour
         rescueHandlerScript.victimCount--;
         GameHandler gameHandlerScript = gameHandler.GetComponent<GameHandler>();
         gameHandlerScript.playerGetVictims(1);
-        Destroy(gameObject);
+        StartCoroutine(DisappearCoroutine());
+    }
+
+    private IEnumerator DisappearCoroutine()
+    {
+        if (rescueMeshRenderer != null)
+            rescueMeshRenderer.enabled = false;
+        if (boxCollider != null)
+            boxCollider.enabled = false;
+        yield return new WaitForSeconds(respawnTime);
+        if (rescueMeshRenderer != null)
+            rescueMeshRenderer.enabled = true;
+        if (boxCollider != null)
+            boxCollider.enabled = true;
     }
 }
