@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class TutorialManager : MonoBehaviour
 {
      public TextMeshProUGUI tutorialText; 
-    public float displayDuration = 5f; // Duration to display the text - 5s for now
+    public float displayDuration = 6f; // Duration to display the text - 5s for now
     private float timer;
 
     //this is to change the text's position on the screen
@@ -35,7 +35,7 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowWelcomeText()
     {
-        tutorialText.text = "Welcome to Extreme Ocean Rescue!";
+        tutorialText.text = "Welcome to Xtreme Ocean Rescue!";
         tutorialText.gameObject.SetActive(true);
         timer = 0f;
        
@@ -47,6 +47,17 @@ public class TutorialManager : MonoBehaviour
         tutorialText.gameObject.SetActive(true);
 
         tutorialText.text = "The goal of the game is to rescue as many drowning swimmers as possible before time runs out.";
+        timer = 0f;
+       
+        // Call next text after a delay
+        Invoke("ShowWelcomeText3", displayDuration);
+    }
+
+    public void ShowWelcomeText3()
+    {
+        tutorialText.gameObject.SetActive(true);
+
+        tutorialText.text = "Your time increases by 10 seconds for each person you save!";
         timer = 0f;
        
         // Call next text after a delay
@@ -80,7 +91,7 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialText.gameObject.SetActive(true);
 
-        tutorialText.text = " ↑ This counter shows how many swimmers you have in your boat. You can carry a maximum of XX swimmers.";
+        tutorialText.text = " ↑ This counter shows how many swimmers you have in your boat. You can carry a maximum of 10 swimmers.";
         timer = 0f; // Reset the timer
 
         // Change position of the text to point at victim counter
@@ -92,7 +103,7 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialText.gameObject.SetActive(true);
 
-        tutorialText.text = " This counter ↑\nshows how many swimmers you've taken to safety.";
+        tutorialText.text = "↑ This counter \nshows how many swimmers you've taken to safety.";
         timer = 0f; // Reset the timer
 
         // Change position of the text to point at saved victim counter
@@ -104,11 +115,20 @@ public class TutorialManager : MonoBehaviour
     {
         tutorialText.gameObject.SetActive(true);
 
-        tutorialText.text = " Take swimmers to safety by driving to dock/throwing them with xx control";
+        tutorialText.text = " Take swimmers to safety by driving to dock and throwing them to safety";
         timer = 0f; // Reset the timer
 
         // Change position of the text center
         textRectTransform.anchoredPosition = new Vector2(0, 0); 
+        Invoke("ShowMenuTool45", displayDuration);
+    }
+    public void ShowMenuTool45()
+    {
+        tutorialText.gameObject.SetActive(true);
+
+        tutorialText.text = "Use rightclick to aim and left click to fire!";
+        timer = 0f; // Reset the timer
+
         Invoke("ShowMenuTool5", displayDuration);
     }
 
