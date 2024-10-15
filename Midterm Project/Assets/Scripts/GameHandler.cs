@@ -29,6 +29,10 @@ public class GameHandler : MonoBehaviour
 
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == "Tutorial"){
+            StartGame();
+        }
         player = GameObject.FindWithTag("Player");
         sceneName = SceneManager.GetActiveScene().name;
         //if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
@@ -130,9 +134,24 @@ public class GameHandler : MonoBehaviour
         SceneManager.LoadScene("EndLose");
     }
 
+    // Start the tutorial scene - Cheryl
     public void StartGame()
     {
+
+        // Start the coroutine to load Level1 after 60 seconds
+        StartCoroutine(LoadLevel1AfterDelay());
+    }
+
+    private IEnumerator LoadLevel1AfterDelay()
+    {
+        Debug.Log("yield started");
+        // Wait for the specified delay
+        yield return new WaitForSeconds(60f);
+
+        Debug.Log("past yield");
+        // Load Level 1 scene
         SceneManager.LoadScene("Level1");
+        Debug.Log("lev1 started");
     }
 
     // Return to MainMenu
